@@ -32,13 +32,11 @@ class KomputerAdapter(
         holder.binding.apply {
             tvNamaLab.text = item.nama_lab
             tvKodeKomputer.text = item.kode_komputer
-            
-            // Set Spesifikasi Teknis
+
             tvCpu.text = ": ${item.merk_cpu}"
             tvMonitor.text = ": ${item.merk_monitor} (${item.ukuran_monitor})"
             tvOs.text = ": ${item.sistem_operasi}"
 
-            // Tampilkan keterangan jika tersedia
             if (item.keterangan.isNotEmpty()) {
                 tvKeteranganLabel.visibility = View.VISIBLE
                 tvKeterangan.visibility = View.VISIBLE
@@ -59,7 +57,6 @@ class KomputerAdapter(
             tvStatus.chipBackgroundColor = ColorStateList.valueOf(ContextCompat.getColor(context, bgColor))
             tvStatus.setTextColor(ContextCompat.getColor(context, textColor))
 
-            // Waktu Update
             tvDate.text = "Update: " + DateUtils.getRelativeTimeSpanString(
                 item.updated_at,
                 System.currentTimeMillis(),
