@@ -1,6 +1,7 @@
 package com.ikhwan.roomdatabse
 
 import android.content.res.ColorStateList
+import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -25,21 +26,30 @@ class KomputerAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position)
+        val context = holder.itemView.context
+        
         holder.binding.apply {
             tvNamaLab.text = item.nama_lab
             tvKodeKomputer.text = item.kode_komputer
-            tvSpecs.text = "${item.merk_cpu} | ${item.merk_monitor} (${item.ukuran_monitor}) | ${item.sistem_operasi}"
-            tvStatus.text = item.status.value
-            val context = root.context
-            val (statusBackground, statusText) = when (item.status) {
+            tvSpecs.text = "${item.merk_cpu} • ${item.merk_monitor} (${item.ukuran_monitor}) • ${item.sistem_operasi}"
+            
+            // Format Status Chip
+            tvStatus.text = item.status.value.uppercase()
+            val (bgColor, textColor) = when (item.status) {
                 StatusKomputer.BAGUS -> R.color.status_bagus_bg to R.color.status_bagus_text
                 StatusKomputer.MAINTENANCE -> R.color.status_maintenance_bg to R.color.status_maintenance_text
                 StatusKomputer.RUSAK -> R.color.status_rusak_bg to R.color.status_rusak_text
             }
-            tvStatus.chipBackgroundColor = ColorStateList.valueOf(
-                ContextCompat.getColor(context, statusBackground)
+            
+            tvStatus.chipBackgroundColor = ColorStateList.valueOf(ContextCompat.getColor(context, bgColor))
+            tvStatus.setTextColor(ContextCompat.getColor(context, textColor))
+
+            // Format Relative Time (e.g., "2 hours ago")
+            tvDate.text = "Update: " + DateUtils.getRelativeTimeSpanString(
+                item.updated_at,
+                System.currentTimeMillis(),
+                DateUtils.MINUTE_IN_MILLIS
             )
-            tvStatus.setTextColor(ContextCompat.getColor(context, statusText))
             
             btnEdit.setOnClickListener { onEdit(item) }
             btnDelete.setOnClickListener { onDelete(item) }
