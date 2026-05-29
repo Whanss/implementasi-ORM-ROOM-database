@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.ikhwan.roomdatabse"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.ikhwan.roomdatabse"
