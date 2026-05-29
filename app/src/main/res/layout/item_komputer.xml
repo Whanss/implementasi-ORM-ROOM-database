@@ -8,7 +8,7 @@
     android:layout_marginVertical="8dp"
     app:cardBackgroundColor="@color/surface"
     app:cardCornerRadius="16dp"
-    app:cardElevation="0dp"
+    app:cardElevation="2dp"
     app:strokeColor="@color/outline"
     app:strokeWidth="1dp">
 
@@ -64,26 +64,113 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvNamaLab" />
 
-        <TextView
-            android:id="@+id/tvSpecs"
+        <!-- Area Spesifikasi Teknis Berbaris -->
+        <LinearLayout
+            android:id="@+id/specsContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:textAppearance="?attr/textAppearanceBodyMedium"
-            android:textColor="@color/text_secondary"
-            tools:text="Intel Core i7 • LG 24 • Windows 11"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/indicator" />
+            app:layout_constraintTop_toBottomOf="@id/indicator">
 
-        <!-- PERBAIKAN DI SINI: Menambahkan constraint start & end -->
+            <!-- Baris CPU -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="CPU"
+                    android:textAppearance="?attr/textAppearanceLabelMedium"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvCpu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_primary"
+                    tools:text=": Intel Core i7" />
+            </LinearLayout>
+
+            <!-- Baris Monitor -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="MONITOR"
+                    android:textAppearance="?attr/textAppearanceLabelMedium"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvMonitor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_primary"
+                    tools:text=": LG 24&quot;" />
+            </LinearLayout>
+
+            <!-- Baris OS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="OS"
+                    android:textAppearance="?attr/textAppearanceLabelMedium"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvOs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_primary"
+                    tools:text=": Windows 11" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvKeteranganLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Keterangan :"
+            android:textAppearance="?attr/textAppearanceLabelSmall"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/specsContainer" />
+
+        <TextView
+            android:id="@+id/tvKeterangan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@color/background"
+            android:padding="8dp"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="@color/text_secondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvKeteranganLabel"
+            tools:text="Keterangan tambahan mengenai komputer ini." />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvSpecs">
+            app:layout_constraintTop_toBottomOf="@id/tvKeterangan">
 
             <TextView
                 android:id="@+id/tvDate"
