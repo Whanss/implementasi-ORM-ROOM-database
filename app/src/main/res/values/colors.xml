@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="primary">#2563EB</color>
+    <color name="primary_dark">#1D4ED8</color>
+    <color name="on_primary">#FFFFFFFF</color>
+    <color name="background">#F8FAFC</color>
+    <color name="surface">#FFFFFFFF</color>
+    <color name="surface_variant">#EEF2F7</color>
+    <color name="outline">#D6DEE8</color>
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="status_bagus_bg">#DFF7E8</color>
+    <color name="status_bagus_text">#166534</color>
+    <color name="status_maintenance_bg">#FEF3C7</color>
+    <color name="status_maintenance_text">#92400E</color>
+    <color name="status_rusak_bg">#FEE2E2</color>
+    <color name="status_rusak_text">#991B1B</color>
+</resources>

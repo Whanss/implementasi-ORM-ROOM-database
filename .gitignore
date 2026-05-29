@@ -1,0 +1,47 @@
+# Build artifacts
+/build
+/.gradle
+/app/build
+*.iml
+.externalNativeBuild
+.cxx
+/captures
+
+# Android Studio / IntelliJ files
+/.idea/workspace.xml
+/.idea/tasks.xml
+/.idea/gradle.xml
+/.idea/assetWizardSettings.xml
+/.idea/dictionaries
+/.idea/libraries
+/.idea/caches
+/.idea/navEditor.xml
+/.idea/modules.xml
+/.idea/deploymentTargetDropDown.xml
+/.idea/shelf
+/.idea/vcs.xml
+*.iws
+*.ipr
+
+# Local configuration files
+/local.properties
+.gradle-local/
+
+# Log files
+*.log
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Kotlin specific
+.kotlin/
+*.kotlin_module
+
+# Device/Emulator files
+*.apk
+*.apks
+*.aab
+
+# Testing
+/screenshots
